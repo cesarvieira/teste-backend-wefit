@@ -11,7 +11,7 @@ export const validator = (joi: Joi.Root) => ({
   },
   rules: {
     cpf: {
-      validate(value: any, helpers: any, _args: any, _options: any) {
+      validate(value: string, helpers: Joi.ExternalHelpers) {
         if (!cpf.isValid(value)) {
           return helpers.error('string.cpf');
         }
@@ -20,7 +20,7 @@ export const validator = (joi: Joi.Root) => ({
       }
     },
     cnpj: {
-      validate(value: any, helpers: any, _args: any, _options: any) {
+      validate(value: string, helpers: Joi.ExternalHelpers) {
         if (!cnpj.isValid(value)) {
           return helpers.error('string.cnpj');
         }

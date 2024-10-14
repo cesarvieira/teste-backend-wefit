@@ -49,7 +49,7 @@ class DbService {
     }
   }
 
-  async query(sql: string, values: any[]) {
+  async query(sql: string, values: unknown) {
     try {
       let conn = this.conn;
       if (!conn) {

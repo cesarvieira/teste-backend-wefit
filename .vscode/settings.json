@@ -1,0 +1,4 @@
+{
+  "jest.runMode": "on-demand",
+  "eslint.experimental.useFlatConfig": true
+}

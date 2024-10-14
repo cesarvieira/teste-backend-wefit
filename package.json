@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev --files -r tsconfig-paths/register --inspect --ignore-watch node_modules src/index.ts",
-    "migrate": "ts-node-dev migrations"
+    "migrate": "ts-node-dev migrations",
+    "lint": "eslint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@fnando/cnpj": "^1.0.2",
@@ -21,13 +23,22 @@
     "@types/express": "^4.17.13",
     "@types/swagger-ui-express": "^4.1.6",
     "@types/validator": "^13.12.2",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "globals": "^15.11.0",
     "mysql-migrations": "^1.0.7",
     "node-mocks-http": "^1.16.1",
+    "prettier": "^3.3.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "ts-jest": "^29.2.5",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "typescript-eslint": "^8.8.1"
   }
 }
