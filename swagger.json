@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WeFit API",
+    "version": "1.0.0",
+    "description": "Documentação da API do WeFit"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4568",
+      "description": "Servidor local"
+    }
+  ],
+  "paths": {
+    "/person": {
+      "post": {
+        "summary": "Insere um novo perfil de vendedor ou comprador",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "personType": {
+                    "type": "string",
+                    "description": "Tipo de pessoa",
+                    "example": "PF",
+                    "enum": ["PF", "PJ"]
+                  },
+                  "document": {
+                    "type": "string",
+                    "description": "CPF ou CNPJ",
+                    "example": "849.430.670-77"
+                  },
+                  "doc_responsible": {
+                    "type": "string",
+                    "description": "CPF do responsável no caso de pessoa jurídica",
+                    "example": "672.626.950-10"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Nome completo",
+                    "example": "Fulano de Tal"
+                  },
+                  "cellphone": {
+                    "type": "string",
+                    "description": "Celular",
+                    "example": "(11) 99999-1111"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "description": "Telefone fixo",
+                    "example": "(11) 5555-11111"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "E-mail",
+                    "example": "fulano@test.net"
+                  },
+                  "email_confirmation": {
+                    "type": "string",
+                    "description": "Confirmação do e-mail",
+                    "example": "fulano@test.net"
+                  },
+                  "address_zip": {
+                    "type": "string",
+                    "description": "CEP",
+                    "example": "12345-678"
+                  },
+                  "address_street": {
+                    "type": "string",
+                    "description": "Rua",
+                    "example": "Rua Tal"
+                  },
+                  "address_number": {
+                    "type": "string",
+                    "description": "Número",
+                    "example": "123"
+                  },
+                  "address_complement": {
+                    "type": "string",
+                    "description": "Complemento",
+                    "example": "Apto 123"
+                  },
+                  "address_neighborhood": {
+                    "type": "string",
+                    "description": "Bairro",
+                    "example": "Bairro Tal"
+                  },
+                  "address_city": {
+                    "type": "string",
+                    "description": "Cidade",
+                    "example": "São Paulo"
+                  },
+                  "address_state": {
+                    "type": "string",
+                    "description": "Estado",
+                    "example": "SP"
+                  },
+                  "acceptance": {
+                    "type": "boolean",
+                    "description": "Aceite dos termos",
+                    "example": true
+                  }
+                },
+                "required": [
+                  "personType",
+                  "document",
+                  "name",
+                  "email",
+                  "email_confirmation",
+                  "address_zip",
+                  "address_street",
+                  "address_number",
+                  "address_neighborhood",
+                  "address_city",
+                  "address_state",
+                  "acceptance"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Pessoa criada com sucesso"
+          },
+          "400": {
+            "description": "Erro na validação dos dados"
+          }
+        }
+      }
+    }
+  }
+}
