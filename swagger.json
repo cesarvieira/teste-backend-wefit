@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "WeFit API",
+    "title": "Teste Backend - WeFit",
     "version": "1.0.0",
-    "description": "Documentação da API do WeFit"
+    "description": "Documentação da API"
   },
   "servers": [
     {
@@ -30,7 +30,7 @@
                   },
                   "document": {
                     "type": "string",
-                    "description": "CPF ou CNPJ",
+                    "description": "CPF ou CNPJ, dependendo do tipo de pessoa, deve ser único",
                     "example": "849.430.670-77"
                   },
                   "doc_responsible": {
@@ -100,7 +100,7 @@
                   },
                   "acceptance": {
                     "type": "boolean",
-                    "description": "Aceite dos termos",
+                    "description": "Aceite dos termos, deve ser true",
                     "example": true
                   }
                 },

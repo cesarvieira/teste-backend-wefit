@@ -48,7 +48,7 @@ async function create(req: PersonRequest, res: Response) {
     address_neighborhood: joi.string().required(),
     address_city: joi.string().required(),
     address_state: joi.string().required(),
-    acceptance: joi.boolean().required(),
+    acceptance: joi.boolean().valid(true).required(),
   });
 
   const { error } = schema.validate(data);
